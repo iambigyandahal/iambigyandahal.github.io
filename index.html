@@ -41,8 +41,8 @@
                                         int x,y,z;
 
                                         for(z = 0; z < 2; z++) {
-                                            for(x = 0; x < 10; x++) {
-                                                for(y = 0; y < x; y++) {
+                                            for(x = 0; x < 10; ++x) {
+                                                for(y = 0; y < x; ++y) {
                                                     cout << "*";
                                                 }
                                                 cout << "\n";
@@ -51,6 +51,7 @@
 
                                         return 0;
                                     }
+
 
                                     </pre>
                                     </p>
