@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  background-color: #af3434;
+  display: flex;
+  justify-content: flex-end;
+  padding: 2%;
+}
+
+header nav {
+  margin-right: 5%;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2.2em;
+  font-family: Lobster, sans-serif;
+  padding-right: 20px;
+}
+
+#stylecase {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #2d2c2c;
+  color: #fff;
+}
+
+#stylecase h1 {
+  font-size: 4em;
+  font-family: Merienda;
+}
+
+#stylecase p {
+  font-size: 2.5em;
+  font-family: "Courgette";
+  color: #af3434;
+}
+
+@media (max-width: 768px) {
+  header {
+    justify-content: center;
+  }
+}
