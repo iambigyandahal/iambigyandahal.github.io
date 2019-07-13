@@ -1,0 +1,211 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #e7e7e7;
+}
+
+.jumbotron {
+	margin-bottom: 0;
+}
+
+.container-of-containers {
+	margin-top: 2%;
+}
+
+.main-post-container {
+	margin-bottom: 2%;
+	background-color: #ffffff;
+	border-radius: 20px;
+}
+
+.post {
+	padding: 2%;
+	overflow: auto;
+}
+
+.post-full {
+	float: left;
+}
+
+.post-image {
+	float: right;
+	height: 50%;
+	width: 40%;
+}
+
+.main-sidebar {
+	text-align: center;
+	margin-bottom: 2%;
+	padding: 2%;
+	background-color: #ffffff;
+	border-radius: 20px;
+}
+
+.main-search-container {
+	margin-top: 3%;
+	width: 100%;
+}
+
+.main-search-container > form {
+	display: grid;
+	grid-template-columns: 84% 15%;
+	grid-column-gap: 1%;
+}
+
+.main-search-container > form > input {
+	height: 50px;
+	background-color: #e3e3e3;
+	color: #000000;
+	border: none;
+	text-indent: 10px;
+}
+
+.main-search-container > form > button {
+	height: 50px;
+	background-color: #e3e3e3;
+	color: #000000;
+	border: none;
+}
+
+.social-media {
+	margin-top: 3%;
+}
+
+.icon-bar {
+	display: grid;
+	grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+.icon-bar a {
+	display: block;
+	text-align: center;
+	padding: 8%;
+	transition: all 0.3s ease;
+	color: white;
+	font-size: 20px;
+}
+
+.icon-bar a:hover {
+	background-color: #000;
+}
+
+.facebook {
+	background: #3B5998;
+	color: white;
+}
+
+.twitter {
+	background: #55ACEE;
+	color: white;
+}
+
+.google {
+	background: #dd4b39;
+	color: white;
+}
+
+.linkedin {
+	background: #007bb5;
+	color: white;
+}
+
+.youtube {
+	background: #bb0000;
+	color: white;
+}
+
+.main-ads-container {
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.ads-container {
+	display: grid;
+	grid-template-columns: 49% 49%;
+	grid-column-gap: 2%;
+}
+
+.main-ads {
+	background-color: #aaa;
+	height: 240px;
+}
+
+.main-footer-bar {
+	display: grid;
+	grid-template-columns: 49% 49%;
+	grid-column-gap: 2%;
+	background-color: #000000;
+	color: #ffffff;
+}
+
+.find-us {
+	padding: 7%;
+	border-right: 2px solid #e3e3e3;
+}
+
+.find-us > h3 {
+	text-decoration: underline;
+}
+
+.about-this-site {
+	padding: 7%;
+}
+
+.about-this-site > h3 {
+	text-decoration: underline;
+}
+
+.main-footer-container {
+	background-color: #333333;
+	color: #ffffff;
+	text-align: center;
+	padding: 5%;
+}
+
+@media only screen and (min-width: 768px) {
+	.container-of-containers {
+		margin-top: 1%;
+		display: grid;
+		grid-template-columns: 75% 24%;
+		grid-column-gap: 1%;
+	}
+
+	.main-post-container {
+		margin-bottom: 1%;
+	}
+
+	.main-sidebar-container {
+		margin-bottom: 2%;
+	}
+
+	.main-search-container {
+		margin-bottom: 15%;
+	}
+
+	.social-media {
+		margin-bottom: 15%;
+	}
+
+	.ads-container {
+		display: block;
+		width: 100%;
+	}
+
+	.main-ads {
+		margin-top: 5%;
+		background-color: #aaa;
+		height: 240px;
+	}
+
+	.main-ads > img {
+		width: 100%;
+		height: 100%;
+	}
+
+	.main-footer-container {
+		padding: 2%;
+	}
+
+}
