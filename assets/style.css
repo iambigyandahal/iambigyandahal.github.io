@@ -19,12 +19,12 @@ header nav {
 header nav a {
   color: #fff;
   text-decoration: none;
-  font-size: 2.2em;
-  font-family: Lobster, sans-serif;
+  font-size: 1.5em;
+  font-family: Poppins, sans-serif;
   padding-right: 20px;
 }
 
-#stylecase {
+#about {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -35,12 +35,12 @@ header nav a {
   color: #fff;
 }
 
-#stylecase h1 {
-  font-size: 4em;
+#about h1 {
+  font-size: 3em;
   font-family: Merienda;
 }
 
-#stylecase p {
+#about p {
   font-size: 2.5em;
   font-family: "Courgette";
   color: #af3434;
@@ -49,5 +49,21 @@ header nav a {
 @media (max-width: 768px) {
   header {
     justify-content: center;
+    padding: 5%;
+  }
+
+  header nav a {
+    font-size: 1.5em;
+  }
+
+  #about h1 {
+    font-size: 2.5em;
+    font-family: Merienda;
+  }
+
+  #about p {
+    font-size: 2em;
+    font-family: "Courgette";
+    color: #af3434;
   }
 }
