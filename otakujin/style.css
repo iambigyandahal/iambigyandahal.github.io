@@ -4,8 +4,6 @@
     box-sizing: border-box;
 }
 
-body { background-color: #000000; }
-
 header { border-bottom: 1px solid #4a4a4a; }
 
 header a { text-decoration: none; }
