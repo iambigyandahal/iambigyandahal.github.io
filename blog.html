@@ -9,6 +9,10 @@
 			padding: 0;
 		}
 
+        body {
+            width: 100%;
+        }
+
 		header {
 			background: #8ee;
 			margin-bottom: 10px;
@@ -45,12 +49,28 @@
 			padding: 15px;
 			border-radius: 20px;
 		}
+
+         @media only screen and (max-width: 768px) {
+            #blog-body {
+                width: 100%;
+                display: block;
+            }
+
+            #blog-left {
+                width: 100%;
+            }
+
+            #blog-right {
+                width: 92%;
+                margin: auto;
+            }
+         }
 	</style>
 </head>
 <body>
 
 	<header>
-	    <h1>blog - mebigyan1 <small><small><small>(a static blog)</small></small></small></h1>
+	    <h1>blog - mebigyan1 <br><small><small><small>(a static blog)</small></small></small></h1>
     </header>
 
     <div id="blog-body">
