@@ -2,11 +2,156 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Blog - mebigyan01</title>
+	<title>blog - mebigyan01 </title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		header {
+			background: #8ee;
+			margin-bottom: 10px;
+			font-family: Arial;
+		}
+
+		header h1 {
+			color: #444;
+			margin-left: 5%;
+			padding: 15px;
+		}
+
+		#blog-body {
+			width: 95%;
+			margin: auto;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		#blog-left {
+			width: 65%;
+		}
+
+		.blog-content {
+			background: #fef;
+			padding: 15px;
+			border-radius: 20px;
+			margin-bottom: 10px;
+		}
+
+		#blog-right {
+			width: 30%;
+			background: #eee;
+			padding: 15px;
+			border-radius: 20px;
+		}
+	</style>
 </head>
 <body>
 
-	<h1>Blog - mebigyan1</h1>
-	
+	<header>
+	    <h1>blog - mebigyan1 <small><small><small>(a static blog)</small></small></small></h1>
+    </header>
+
+    <div id="blog-body">
+    	<section id="blog-left">
+    		<div class="blog-content">
+    			<p style="font-family: sans-serif; font-size: 1.2em; text-align: center;">How to root your phone?</p>
+    			<br>
+    			<p>Rooting is the process of allowing users of smartphones, tablets and other devices running the Android mobile operating system to attain privileged control (known as root access) over various Android subsystems.
+    			<br><br>
+    			After the root process your warranty becomes void so be sure whether to root or not. Also you may brick your phone while rooting so you must have proper guidance or proper knowledge.
+    			</p>
+    			<br>
+    			<a id="readmore1a" href="#readmore1" onclick="document.getElementById('readmore1').style.display='block';document.getElementById('readmore1a').style.display='none';">Read More</a>
+    			<div id="readmore1" style="display: none;">
+    				<span style="font-weight: bold">Prerequisites:</span>
+    				<p><br> &nbsp; &nbsp;  1) PC<br>
+    					    &nbsp; &nbsp;  2) adb<br>
+    					    &nbsp; &nbsp;  3) Odin (only Windows) or Heimdall (Windows, Linux, Mac)<br>
+    					    &nbsp; &nbsp;  4) phone with unlocked bootloader and allowed usb debugging<br>
+    					    &nbsp; &nbsp;  5) TWRP or other recovery images<br>
+    					    &nbsp; &nbsp;  6) root manager tools like SuperSU, Magisk<br>
+    				</p>
+    				<br>
+    				<span style="font-weight: bold">Process:</span>
+    				<p>
+    					<br>First of all install adb for your respective OS or distro.<br>
+    					For help, see this help post in xda.<br><br>
+    					<a style="text-decoration: none;" href="https://www.xda-developers.com/install-adb-windows-macos-linux/">How to Install ADB on Windows, macOS, and Linux</a>
+
+    					<br><br>Now install Odin or Heimdall according to your OS.
+    					<br>
+    					<br>&nbsp; &nbsp; - For <a style="text-decoration: none;" href="https://odindownload.com/">Odin</a>
+    					<br>&nbsp; &nbsp; - For <a style="text-decoration: none;" href="https://gitlab.com/BenjaminDobell/Heimdall">Heimdall</a> ( Users are suggested to compile heimdall yourself as the executable precompiled are more error prone and may not run properly. See Documentation on the given link to compile for your OS. )<br><br>
+
+    					After these steps you must unlock your bootloader. Before you do this remember your warranty is void after you root. So if you are not sure its better to step back now. If you are sure, then continue.<br><br>
+
+    					To unlock your bootloader first you must enable developer options.
+    					Go to settings, about phone and software information. Click 3 times in Build Number and you may be asked for your fingerprint, pin , patterns to enable developer options.<br><br>
+
+    					After you enable developer options go back to settings screen and see for developer options it must be near to about phone. Then unock OEM again you may be asked for your mobile security locks.
+    					<br><br>
+
+    					Now you must download recovery images here I will tell you how to do it with TWRP recovery. You must download device specific twrp recovery images so be careful while choosing twrp recovery images.
+    					<br><br>
+    					<a href="https://twrp.me/Devices/">Download TWRP recovery for your device from here</a>
+    					<br><br>
+    					Now only you need root manager tools. First lets know about some things. There are two types of main root managers. Magisk and SuperSu. SuperSU modifies the system files and roots your device while Magisk create a systemless root. That means system files are not affected by Magisk. Doing this way you can enjoy all the apps without any problem. But SuperSU way of rooting may create problem with some apps. So choose your root manager, how you would like. If you are unsure about this try Magisk.
+    					<br><br>
+    					&nbsp; &nbsp; - For <a href="https://download.chainfire.eu/supersu/">SuperSU</a><br>
+    					&nbsp; &nbsp; - For <a href="https://magiskmanager.com/">Magisk</a>
+    					<br><br>
+
+    					After you have downloaded eveything you are ready to root your device.
+
+    					<br><br>
+    					Before proceeding charge your device fully.
+    					Now extract Odin and open it.
+    					Then, switch off your phone and boot into bootloader mode.
+    					Once your device is in download mode, connect it to the PC with a USB cable. The Odin window on PC should detect the device and show an “Added!!” message.
+    					Now click on the AP tab on Odin window and select the TWRP recovery file that you downloaded for your device.
+						└ Note: DON’T play with any other options on the screen. You’re only required to connect your device and select the TWRP recovery .tar file in the AP tab.
+						Click the Start button on Odin and wait for it to finish the process. Once it has finished successfully, you’ll see a pass message on the Odin screen.
+						Your device will automatically reboot when Odin is done flashing. You can then disconnect your device.
+						Your device will boot up. Power off again and now boot into recovery mode. You can see there is TWRP recovery now. After that, 
+						move your root manager zip in your sd card. Backup everything in sdcard first so that you can revert any changes incase something goes wrong. After backing up, click on install menu on twrp. Choose your root manager zip file and install. After install, reboot your device. It may take time to boot up. So at most wait 5-10 minutes.
+						<br><br>
+						And there you go, you have rooted your phone. Now you can flash custom rom, kernel, recovery or perform any things that needs root privileges.<br><br>
+						Happy Rooting!
+    				</p>
+    				<br><br>
+    				<a id="readless1a" href="#readless1" onclick="document.getElementById('readmore1').style.display='none';document.getElementById('readmore1a').style.display='block';">Read Less</a>
+    			</div>
+    		</div>
+
+    		<div class="blog-content">
+    			<p style="font-family: sans-serif; font-size: 1.2em; text-align: center;">How to flash custom ROM in your rooted device?</p>
+    			<br>
+    			<p>After rooting the most amazing thing to do is flashing a custom rom.</p>
+    			<br><br>
+    			Custom rom can be flashed for different reasons. To remove unwanted apps, to make your device faster, and many more reasons.
+    			</p>
+    			<br>
+    			<a id="readmore2a" href="#readmore2" onclick="document.getElementById('readmore2').style.display='block';document.getElementById('readmore2a').style.display='none';">Read More</a>
+    			<div id="readmore2" style="display: none;">
+    				<p>
+    					Coming soon! Keep updated!
+    				</p>
+    				<br><br>
+    				<a id="readless2a" href="#readless2" onclick="document.getElementById('readmore2').style.display='none';document.getElementById('readmore2a').style.display='block';">Read Less</a>
+    			</div>
+    		</div>
+
+        </section>
+        <section id="blog-right">
+        	<p style="font-family: sans-serif; font-size: 1.2em; text-align: center;">About Author</p>
+        	<br>
+		    <center><a style="text-decoration: none;" href="https://github.com/mebigyan1">github</a>
+	        <a style="text-decoration: none;" href="https://facebook.com/mebigyan1">facebook</a>
+	        <a style="text-decoration: none;" href="https://twitter.com/mebigyan">twitter</a></center>
+        </section>
+    </div>
+
 </body>
 </html>
