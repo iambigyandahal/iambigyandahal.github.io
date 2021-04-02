@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HawaPani</title>
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<script type="text/javascript" src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+
+	<div id="app" data-server-rendered="true">
+		<div id="root" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? ' warm' : ''">
+			<input class="inputBox" v-model="loc" type="text" placeholder="Search ..." @keypress="getWeatherData">
+			<div v-if="typeof weather.main != 'undefined'" class="main-body">
+				<div id="dateNow">{{dateNow}}</div>
+				<div id="location">{{weather.name}}, {{weather.sys.country}}</div>
+				<div id="temp">{{weather.main.temp}}&#176;C</div>
+				<div id="desc">{{weather.weather[0].main}}</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script> -->
+
+	<script src="./assets/js/app.js"></script>
+
+	<script type="text/javascript" src="sw.js"></script>
+	
+</body>
+</html>
