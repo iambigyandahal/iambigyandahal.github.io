@@ -1,7 +1,8 @@
 {
   "background_color": "purple",
   "description": "HawaPani, a weather app.",
-  "display": "fullscreen",
+  "display": "standalone",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "assets/img/icon.png",
