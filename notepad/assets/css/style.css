@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+  height: 100vh;
+  width: 100%;
+}
+
+#page-content-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  height: 2em;
+  background: #111;
+  padding: 0 0.25em;
+}
+
+.toolbar button,
+.toolbar select {
+  display: inline-block;
+  height: 1.67em;
+  margin-right: 0.5em;
+  align-self: center;
+}
+
+#code {
+  width: 100%;
+  height: calc(100% - 1.67em);
+  font-size: 20px;
+}
+
+#saveBtn {
+  height: 20px;
+}
+
+.dialog-save h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.dialog-save .tingle-modal-box__content {
+  padding: 2rem;
+}
+
+.dialog-save .tingle-modal-box__footer {
+  padding: 1rem;
+}
+
+.dialog-save .tingle-btn {
+  padding: 0.667rem;
+}

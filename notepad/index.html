@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notepad</title>
+    <script src="src/ace.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.2/tingle.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.2/tingle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <div id="page-content-wrapper">
+        <div class="toolbar">
+            <select style="height: 30px;" name="selectLang"></select>
+            <button style="height: 30px;" name="saveBtn">Save</button>
+        </div>
+        <pre id="code"></pre>
+    </div>
+
+    <script src="extension.js"></script>
+
+    <script>
+        const MODES = getModes();
+
+        $('select[name="selectLang"]').append(MODES.map(mode => new Option(mode.text, mode.value)));
+
+        const defaultMode = 'text';
+        const code = ace.edit("code");
+        code.setTheme("ace/theme/monokai");
+        code.getSession().setMode(`ace/mode/${defaultMode}`);
+        code.setShowPrintMargin(false);
+
+        $('select[name="selectLang"]').on('change', function(e) {
+            code.getSession().setMode("ace/mode/" + e.target.value);
+        }).val(defaultMode);
+
+        $('button[name="saveBtn"]').on('click', e => saveDialog.open());
+
+        const saveDialog = new tingle.modal({
+            footer: true,
+            stickyFooter: false,
+            closeMethods: ['overlay', 'button', 'escape'],
+            closeLabel: 'Close',
+            cssClass: ['dialog-save'],
+            onOpen: function() {
+                $('input[name="filename"]').val(`*.${lookupFileExtension()}`);
+            },
+            onClose: function() {},
+            beforeClose: function() {
+                return true;
+            }
+        });
+
+        saveDialog.addFooterBtn('Confirm', 'tingle-btn tingle-btn--primary tingle-btn--pull-right', function() {
+            const filename = $('input[name="filename"]').val();
+            const file = new File([code.getValue()], filename, {
+                    type: "text/plain;charset=utf-8"
+                });
+                saveAs(file);
+                saveDialog.close();
+            });
+
+            saveDialog.addFooterBtn('Cancel', 'tingle-btn tingle-btn--danger tingle-btn--pull-right', function() {
+            saveDialog.close();
+        });
+
+        saveDialog.setContent($('<div>')
+        .append($('<h1>', {
+            text: 'Enter a filename'
+        }))
+        .append($('<input>', {
+            name: 'filename'
+        })).unwrap().html());
+
+        function lookupFileExtension() {
+            const selectedMode = $('select[name="selectLang"]').val();
+            const mode = MODES.find(currMode => currMode.value === selectedMode);
+            return mode.extension || mode.value;
+        }
+    </script>
+</body>
+</html>
